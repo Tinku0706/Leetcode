@@ -11,5 +11,8 @@ class Solution:
                 lastseen[2]=i
             ans+=min(lastseen)+1
         return ans
+    #Store the latest index of a, b, and c in last.
+#min(last) gives the leftmost boundary where a valid substring can start while still containing all 3 characters.
+#Therefore, there are min(last) + 1 valid substrings ending at the current index, so add it to ans.
             
         
