@@ -1,19 +1,18 @@
 class Solution:
     def middleNode(self, head: ListNode | None) -> ListNode | None:
-        current=head
-        count=0
-        while current is not None:
-            count+=1
-            current=current.next
-        middle_elmt=(count//2)
-        current=head
-        count2=0
-        while current is not None:
-            if count2 == middle_elmt:
-                return current
-            count2 += 1
-            current = current.next
-        return None
+        slow = head
+        fast = head
+        while fast is not None and fast.next is not None:
+            slow = slow.next
+            fast = fast.next.next
+        return slow
+# How it works
+# Suppose the linked list is:
+
+# 1 → 2 → 3 → 4 → 5 → None
+# - slow moves one node at a time.
+# - fast moves two nodes at a time.
+# - When fast reaches the end, slow is at the middle.
 
 
 
