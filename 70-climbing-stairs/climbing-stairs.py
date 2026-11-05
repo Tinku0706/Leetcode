@@ -1,15 +1,11 @@
 class Solution:
     def climbStairs(self, n: int) -> int:
-        if n<=3:
-            return n
-        prev1=3
-        prev2=2
-        prev3=1
-        for i in range(4,n+1):
-            cur=prev1+prev2
-            prev3=prev2
-            prev2=prev1
-            prev1=cur
-
-        return prev1
-        
+        dp=[-1]*(n+1)
+        return self.helper(n,dp)
+    def helper(self,n,dp):
+        if n<=1:
+            return 1
+        if dp[n]!=-1:
+            return dp[n]
+        dp[n]=self.helper(n-1,dp)+self.helper(n-2,dp)
+        return dp[n]        
