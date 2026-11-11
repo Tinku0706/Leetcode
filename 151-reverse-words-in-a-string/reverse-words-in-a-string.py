@@ -5,5 +5,6 @@ class Solution:
         for i in range(len(arr)-1,-1,-1):
             word.append(arr[i])
             if i!=0:
-               word.append(" ")
+                word.append(' ')
         return "".join(word)
+        
