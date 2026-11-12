@@ -9,4 +9,3 @@ class Solution:
             st.add(i)
             res=max(res,len(st))
         return res
-        
